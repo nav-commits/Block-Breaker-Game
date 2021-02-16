@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class Paddle : MonoBehaviour
 {
-    public Camera mainCamera;
+    [SerializeField] float screenwidthUnits = 16f;
+    [SerializeField] float minX = -5f;
+    [SerializeField] float maxX = 5.7f;
+
     void Start()
     {
-        mainCamera = FindObjectOfType<Camera>();
+      
     }
 
    
     void Update()
     {
-        transform.position = new Vector3(mainCamera.ScreenToViewportPoint(new Vector3(Input.mousePosition.x, 0, 0)).x, -4, 0);
-
+        float mousemoveunits = Input.mousePosition.x / Screen.width * screenwidthUnits;
+        Vector2 paddlepos = new Vector2(transform.position.x, transform.position.y);
+        paddlepos.x = Mathf.Clamp(mousemoveunits, minX, maxX);
+        transform.position = paddlepos;
+        
     }
 }
