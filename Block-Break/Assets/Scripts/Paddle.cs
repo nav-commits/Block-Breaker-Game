@@ -6,7 +6,7 @@ public class Paddle : MonoBehaviour
 {
     [SerializeField] float screenwidthUnits = 16f;
     [SerializeField] float minX = -5f;
-    [SerializeField] float maxX = 5.7f;
+    [SerializeField] float maxX = 5.4f;
 
     void Start()
     {
