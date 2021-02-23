@@ -11,6 +11,8 @@ public class Ball : MonoBehaviour
     [SerializeField] float yPush = 15f;
      Vector2 paddleBallVector;
      bool Hastarted = false;
+     bool Baller = true;
+    [SerializeField] Ball ball;
 
     void Start()
     {
@@ -25,6 +27,12 @@ public class Ball : MonoBehaviour
            LaunchBall();
            LockBallpaddle();
         }
+
+        if (ball.transform.position.x > 0 || ball.transform.position.x < 0)
+        {
+            Baller = false;
+        }
+
 
     }
 
@@ -42,4 +50,6 @@ public class Ball : MonoBehaviour
         Vector2 paddlepos = new Vector2(paddleOne.transform.position.x, paddleOne.transform.position.y);
         transform.position = paddlepos + paddleBallVector;
     }
+
+    
 }
