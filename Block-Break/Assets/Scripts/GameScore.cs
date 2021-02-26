@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameScore : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class GameScore : MonoBehaviour
         if (Score == 52)
         {
             Scoretext.text = "You Win:" + Score.ToString();
+            SceneManager.LoadScene(2);
         }
 
 
