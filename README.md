@@ -1,3 +1,3 @@
 # Block-Breaker-Game
-https://sharemygame.com/@GAMERNAV123/block-breaker
+https://sharemygame.com/@GAMERNAV123/block-break
 
