@@ -8,17 +8,23 @@ public class EndGame : MonoBehaviour
 {
     public Text Lives;
     public int lifes;
-  
+
+
+    private void Start()
+    {
+        lifes = 5;
+        TrackText();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        //Life();
+        Life();
 
         if (lifes == 0)
         {
             SceneManager.LoadScene(1);
-            Life();
+
         }
         
     }
@@ -26,7 +32,12 @@ public class EndGame : MonoBehaviour
     public void Life()
     {
         lifes--;
-        Lives.text = "lives" + lifes.ToString();
+        TrackText();
+    }
+
+    public void TrackText()
+    {
+        Lives.text = "lives:" + lifes.ToString();
     }
 
 

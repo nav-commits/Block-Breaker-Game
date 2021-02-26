@@ -13,10 +13,15 @@ public class GameScore : MonoBehaviour
         Score++;
         Scoretext.text = "Player Score:" + Score.ToString();
 
-        if(Score == 52)
+
+        if (Score == 52)
         {
             Scoretext.text = "You Win:" + Score.ToString();
         }
+
+
     }
+
+   
 }
 

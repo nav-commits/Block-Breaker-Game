@@ -12,7 +12,7 @@ public class Ball : MonoBehaviour
      Vector2 paddleBallVector;
      bool Hastarted = false;
      bool Baller = true;
-    [SerializeField] Ball ball;
+     [SerializeField] Ball ball;
 
     void Start()
     {
@@ -28,9 +28,12 @@ public class Ball : MonoBehaviour
            LockBallpaddle();
         }
 
+        // so the ball doesnt go left and right reptitivly
+
         if (ball.transform.position.x > 0 || ball.transform.position.x < 0)
         {
             Baller = false;
+           
         }
 
 
