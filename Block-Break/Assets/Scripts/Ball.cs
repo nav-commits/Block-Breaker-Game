@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Ball : MonoBehaviour
 {
 
@@ -11,8 +12,6 @@ public class Ball : MonoBehaviour
     [SerializeField] float yPush = 15f;
      Vector2 paddleBallVector;
      bool Hastarted = false;
-     bool Baller = true;
-     [SerializeField] Ball ball;
 
     void Start()
     {
@@ -27,15 +26,6 @@ public class Ball : MonoBehaviour
            LaunchBall();
            LockBallpaddle();
         }
-
-        // so the ball doesnt go left and right reptitivly
-
-        if (ball.transform.position.x > 0 || ball.transform.position.x < 0)
-        {
-            Baller = false;
-           
-        }
-
 
     }
 
