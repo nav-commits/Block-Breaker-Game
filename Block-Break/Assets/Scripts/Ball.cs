@@ -13,9 +13,11 @@ public class Ball : MonoBehaviour
      Vector2 paddleBallVector;
      bool Hastarted = false;
 
+
     void Start()
     {
         paddleBallVector = transform.position - paddleOne.transform.position;
+
     }
 
   
