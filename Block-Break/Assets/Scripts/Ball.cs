@@ -12,12 +12,13 @@ public class Ball : MonoBehaviour
     [SerializeField] float yPush = 15f;
      Vector2 paddleBallVector;
      bool Hastarted = false;
-
+    [SerializeField] Ball ball;
+    public bool StopballleftAndRight;
 
     void Start()
     {
         paddleBallVector = transform.position - paddleOne.transform.position;
-
+        StopballleftAndRight = true;
     }
 
   
@@ -29,6 +30,9 @@ public class Ball : MonoBehaviour
            LockBallpaddle();
         }
 
+        // stopping the ball from going straight left and right
+
+        StopBall();
     }
 
     private void LaunchBall()
@@ -46,5 +50,18 @@ public class Ball : MonoBehaviour
         transform.position = paddlepos + paddleBallVector;
     }
 
-    
+
+    private void StopBall()
+    {
+        if (ball.transform.position.x <= 0f || ball.transform.position.x >= 0f)
+        {
+            StopballleftAndRight = false;
+        }
+
+        if (ball.transform.position.x <= -6f && ball.transform.position.y > -0f || ball.transform.position.x >= 6f)
+        {
+            StopballleftAndRight = false;
+        }
+    }
+
 }
